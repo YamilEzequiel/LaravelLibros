@@ -19,7 +19,8 @@ class CreateEtiquetaLibroTable extends Migration
             $table->unsignedInteger('etiqueta_id');
 
 
-            //$table->foreign('libro_id')->references('id')->on('libros');
+            $table->foreign('libro_id')->references('id')->on('libros');
+            $table->foreign('etiqueta_id')->references('id')->on('etiquetas');
 
             $table->timestamps();
         });

@@ -14,7 +14,7 @@ class CreateLibrosTable extends Migration
     public function up()
     {
         Schema::create('libros', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('titulo');
             $table->mediumText('descripcion');
             $table->text('contenido');
@@ -22,7 +22,7 @@ class CreateLibrosTable extends Migration
             $table->integer('categoria_id')->unsigned(); // Relación con categorias
             $table->timestamps();
 
-            $table->foreign('categoria_id')->references('id')->on('users');
+            $table->foreign('categoria_id')->references('id')->on('categorias');
         });
     }
 

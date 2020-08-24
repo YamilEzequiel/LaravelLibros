@@ -14,4 +14,6 @@ class Libro extends Model
     public function etiquetas(){
         return $this->belongsToMany(Etiqueta::class); //Muchos a muchos
     }
+
+    protected $dates = ['fecha']; // pasar fechas a carbon
 }

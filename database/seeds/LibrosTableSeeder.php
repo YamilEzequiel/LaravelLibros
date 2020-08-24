@@ -15,13 +15,13 @@ class LibrosTableSeeder extends Seeder
      */
     public function run()
     {
-        Categoria::truncate(); // Evita duplicar datos
+        //Categoria::truncate(); // Evita duplicar datos
         $categoria = new Categoria();
         $categoria->nombre = "Categoría 1";
         $categoria->save();
 
 
-        Etiqueta::truncate(); // Evita duplicar datos
+        //Etiqueta::truncate(); // Evita duplicar datos
         $etiqueta = new Etiqueta();
         $etiqueta->nombre = "Etiqueta 1";
         $etiqueta->save();
@@ -31,7 +31,7 @@ class LibrosTableSeeder extends Seeder
         $etiqueta->save();
 
 
-        Libro::truncate(); // Evita duplicar datos
+       //Libro::truncate(); // Evita duplicar datos
         $libro = new Libro();
         $libro->titulo = "Mi primer libro";
         $libro->descripcion = "Extracto de mi primer libro";
