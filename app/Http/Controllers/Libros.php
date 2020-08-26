@@ -16,7 +16,9 @@ class Libros extends Controller
     {
         $libros = Libro::all();
 
-        return view('libros',['libros' => $libros]);
+       // return view('libros',['libros' => $libros]);
+
+       return view('home');
     }
 
     /**
@@ -37,7 +39,14 @@ class Libros extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $libros = new Libro();
+        $libros->titulo = $request->nombre;
+        $libros->descripcion = $request->descripcion;
+        $libros->contenido = "contenido";
+        $libros->categoria_id = auth()->id();
+        $libros->save();
+
+        return $libros;
     }
 
     /**
